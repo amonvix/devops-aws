@@ -8,16 +8,14 @@ variable "tags" {
 
 variable "assume_role" {
   type = object({
-    arn    = string
     region = string
   })
   default = {
-    arn    = "arn:aws:iam::414813662184:user/cli-amon-devops"
     region = "us-east-1"
   }
 }
 
-variable "remote backend" {
+variable "remote_backend" {
   type = object({
     bucket_name                = string
     dynamo_table_name          = string
