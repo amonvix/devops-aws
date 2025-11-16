@@ -5,16 +5,17 @@ terraform {
       version = "~> 6.0"
     }
   }
+
   backend "s3" {
     bucket       = "workshop-nov-remote-backend-bucket-amon"
     region       = "us-east-1"
     use_lockfile = true
-    #dynamodb_table = "workshop-nov-state-locking-table"     <- modelo antigo ainda usado
+    # dynamodb_table = "workshop-nov-state-locking-table"
   }
 }
-# Configure the AWS Provider
-provider "aws" {
 
+provider "aws" {
+  
   default_tags {
     tags = var.tags
   }

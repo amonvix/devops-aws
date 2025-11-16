@@ -7,13 +7,8 @@ terraform {
   }
 }
 
-# Configure the AWS Provider
 provider "aws" {
-  region = var.assume_role_arn.region
-
-  assume_role {
-    role_arn = var.assume_role_arn.arn
-  }
+  region = var.assume_role.region
 
   default_tags {
     tags = var.tags
